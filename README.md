@@ -11,6 +11,11 @@ npm install
 npm start // Starts the React app
 ```
 
+### Demo
+
+Here is a demo of the UI hosted on firebase
+[https://browse-books-fe.web.app](https://browse-books-fe.web.app)
+
 ## Storybook
 
 Storybook allows testing and playing with components in isolation. Run this command to start storybook on port 6006
