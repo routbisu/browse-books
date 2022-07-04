@@ -1,0 +1,64 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { MemoryRouter } from 'react-router'
+import { ChakraProvider } from '@chakra-ui/react'
+
+import Book from './Book'
+
+export const bookDetails = {
+  id: '17da4aea-6e54-43a3-aece-11b1362de170',
+  cover: 'https://picsum.photos/id/1005/640/480',
+  title: 'Understanding ECMAScript 6',
+  author: 'Dr. John Doe',
+}
+
+<Meta
+  title="Books/Book"
+  component={Book}
+  decorators={[
+    (Story) => (
+      <div style={{ width: 200, margin: '3em' }}>
+        <ChakraProvider>
+          <MemoryRouter initialEntries={['/']}>
+            <Story />
+          </MemoryRouter>
+        </ChakraProvider>
+      </div>
+    ),
+  ]}
+/>
+
+export const Template = (args) => <Book {...args} />
+
+# Book
+
+This represents a book thumbnail
+
+## Default behaviour
+
+This is default state of the Book component
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      bookDetails,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Loading state
+
+This is the loading state for the Book component
+
+<Canvas>
+  <Story
+    name="Loading"
+    args={{
+      isLoading: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
