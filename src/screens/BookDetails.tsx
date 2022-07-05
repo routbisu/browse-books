@@ -60,9 +60,11 @@ const BookDetails: React.FC = () => {
                 {author}
               </Text>
               <Text mt={1}>ISBN: {isbn}</Text>
-              <Text color="blue.600" fontWeight={500} mt={5}>
-                Books by the same author
-              </Text>
+              {sameAuthorBooks?.length > 0 ? (
+                <Text color="blue.600" fontWeight={500} mt={5}>
+                  Books by the same author
+                </Text>
+              ) : null}
 
               <SimpleGrid maxWidth={500} mt={5} columns={[2, 2, 3]} spacing={5}>
                 {sameAuthorBooks.map((book) => (
